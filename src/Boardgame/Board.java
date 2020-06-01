@@ -2,8 +2,8 @@ package Boardgame;
 
 public class Board {
 	
-	private Integer rows;
-	private Integer columns;
+	private int rows;
+	private int columns;
 	private Piece[][] pieces;
 	
 	public Board(Integer rows, Integer columns) {
