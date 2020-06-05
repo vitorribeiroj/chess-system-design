@@ -10,7 +10,7 @@ public class King extends ChessPiece {
 	
 	private ChessMatch chessMatch;
 	
-	public King(Board board, Color color) {
+	public King(Board board, Color color, ChessMatch chessMatch) {
 		super(board, color);
 		this.chessMatch = chessMatch;
 	}
@@ -87,10 +87,11 @@ public class King extends ChessPiece {
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}		
-/*		
-		//specialmove castling
-		if(getMoveCount() == 0 && !chessMatch.getCheck()) {
-			// specialmove castling kingside rook
+
+		
+		// #specialmove castling
+		if (getMoveCount() == 0 && !chessMatch.getCheck()) {
+			// #specialmove castling kingside rook
 			Position posT1 = new Position(position.getRow(), position.getColumn() + 3);
 			if (testRookCastling(posT1)) {
 				Position p1 = new Position(position.getRow(), position.getColumn() + 1);
@@ -99,7 +100,7 @@ public class King extends ChessPiece {
 					mat[position.getRow()][position.getColumn() + 2] = true;
 				}
 			}
-			// specialmove castling queenside rook
+			// #specialmove castling queenside rook
 			Position posT2 = new Position(position.getRow(), position.getColumn() - 4);
 			if (testRookCastling(posT2)) {
 				Position p1 = new Position(position.getRow(), position.getColumn() - 1);
@@ -109,10 +110,8 @@ public class King extends ChessPiece {
 					mat[position.getRow()][position.getColumn() - 2] = true;
 				}
 			}
-			
-			
 		}
-*/				
+		
 		return mat;
 	}
 
